@@ -13,16 +13,15 @@ def amount_post_investment(principal, rate, num, time):
     # d = principal * c
     # return round(d, 2)
 
-    answer = principal*(1+ rate/num)**(num*time)
+    answer = principal*(1+ rate/num)**(num*time) # drier than above
     return round(answer,2)
 
 
 # P(1 + r/n)<sup>nt</sup>
 # PMT × {[(1 + r/n)^(nt) - 1] / (r/n)}
 def post_investment_monthly_contributions(principal, rate, num, time, monthly):
-    step_1 = amount_post_investment(principal, rate, num, time)
-    step_2 = monthly * (((1+rate/num)**(num*time)-1)/(rate/num))
-    answer = step_1 + step_2
-    return answer
+    answer = (amount_post_investment(principal, rate, num, time)) + (monthly * (((1+rate/num)**(num*time)-1)/(rate/num)))
 
-    # Small mistake here ^^ Time for bed
+    return round(answer, 2)
+# answer works but only with deposits being made at end. 
+# Answer has deposits at beginning
