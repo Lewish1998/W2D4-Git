@@ -8,6 +8,8 @@ The formula you’ll use for this is:
 
 A = P(1 + r/n)<sup>nt</sup>
 
+Amount = PrincipalAmount(1 + AnualRateOfInterest / NumberInterestCompoundedPerYear) ** (NumberInterestCompoundedPerYear * NumberOfYearsInvested)
+
 Where:
 
 - P is the principal amount
@@ -33,3 +35,5 @@ Don't worry about currency.
 ## Running the tests
 
 To run the tests, run `python3 run_tests.py`
+
+A = P(1+r/n)**nt + ((1+r/n)**nt-1 / (r/n))
